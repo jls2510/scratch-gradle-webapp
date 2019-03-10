@@ -14,7 +14,7 @@ repositories {
 
 // tell gretty to start server during 'test' task
 gretty {
-    port = 8081
+    httpPort = 8081
     integrationTestTask = 'test'  
 }
 

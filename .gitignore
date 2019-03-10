@@ -1,0 +1,18 @@
+
+$ IDE stuff
+.idea
+
+# Build stuff
+[Bb]uild
+
+# Gradle local stuff
+.gradle
+gradle/wrapper/*.jar
+
+# Configuration stuff
+config.properties
+
+# Temporary stuff
+*.log
+*.log.lck
+

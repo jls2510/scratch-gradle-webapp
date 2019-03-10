@@ -1,7 +1,6 @@
-
 plugins {
     id 'war'
-	id 'org.gretty' version '2.2.0'
+    id 'org.gretty' version '2.2.0'
 }
 
 sourceCompatibility = '1.8'
@@ -15,7 +14,12 @@ repositories {
 // tell gretty to start server during 'test' task
 gretty {
     httpPort = 8081
-    integrationTestTask = 'test'  
+    integrationTestTask = 'test'
+}
+
+// agree TOS for scan
+buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"; termsOfServiceAgree = "yes"
 }
 
 dependencies {
@@ -23,14 +27,14 @@ dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
     //providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
     providedCompile 'javax.servlet.jsp:jsp-api:2.1'
-	
-	// unit testing
-	testCompile 'junit:junit:4.12'
+
+    // unit testing
+    testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.7.19'
-	
-	// functional testing
-	testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1' 
+
+    // functional testing
+    testCompile 'io.github.bonigarcia:webdrivermanager:1.6.1'
     testCompile 'org.seleniumhq.selenium:selenium-java:3.3.1'
-	
+
 }
 

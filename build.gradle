@@ -15,12 +15,13 @@ repositories {
 gretty {
     httpPort = 8081
     integrationTestTask = 'test'
+    contextPath = '/webdemo'
 }
 
-// agree TOS for scan
-buildScan {
-    termsOfServiceUrl = "https://gradle.com/terms-of-service"; termsOfServiceAgree = "yes"
-}
+// agree TOS for gradle buildscan
+//buildScan {
+//    termsOfServiceUrl = "https://gradle.com/terms-of-service"; termsOfServiceAgree = "yes"
+//}
 
 dependencies {
 

@@ -8,7 +8,6 @@ $ IDE stuff
 
 # Gradle local stuff
 .gradle
-gradle/wrapper/*.jar
 
 # Configuration stuff
 config.properties

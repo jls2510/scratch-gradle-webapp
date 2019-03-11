@@ -1,6 +1,18 @@
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.6.1'
+    }
+}
+
 plugins {
     id 'war'
     id 'org.gretty' version '2.2.0'
+    id 'com.bmuschko.cargo' version '2.6.1'
+    id 'com.bmuschko.cargo-base' version '2.6.1'
 }
 
 sourceCompatibility = '1.8'
@@ -26,9 +38,9 @@ if (hasProperty('buildScan')) {
 }
 dependencies {
 
-    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    testCompile 'javax.servlet:javax.servlet-api:4.0.1'
     //providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    providedCompile 'javax.servlet.jsp:jsp-api:2.1'
+    testCompile 'javax.servlet.jsp:jsp-api:2.1'
 
     // unit testing
     testCompile 'junit:junit:4.12'
@@ -40,3 +52,18 @@ dependencies {
 
 }
 
+cargo {
+    containerId = 'tomcat7x'
+    port = 8080
+
+    deployable {
+        context = '/webdemo'
+    }
+
+    remote {
+        hostname = 'jenkins.kogentservices.com'
+        username = 'kogent'
+        password = 't3mp0rary'
+    }
+
+}

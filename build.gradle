@@ -36,11 +36,13 @@ if (hasProperty('buildScan')) {
         termsOfServiceUrl = "https://gradle.com/terms-of-service"; termsOfServiceAgree = "yes"
     }
 }
+
 dependencies {
 
     testCompile 'javax.servlet:javax.servlet-api:4.0.1'
     //providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'javax.servlet.jsp:jsp-api:2.1'
+    compile 'javax.servlet:jstl:1.2'
 
     // unit testing
     testCompile 'junit:junit:4.12'
